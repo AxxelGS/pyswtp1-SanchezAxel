@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeruFit - Blog</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="css/newspaper.css">
+    <link rel="stylesheet" href="css/comments.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">PeruFit</div>
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li>
+                    <a href="clases.html">Clases</a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-content">
+                            <div class="mega-menu-column">
+                                <h3>Musculación</h3>
+                                <ul>
+                                    <li><a href="#">Pesas</a></li>
+                                    <li><a href="#">Powerlifting</a></li>
+                                    <li><a href="#">Hipertrofia</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-column">
+                                <h3>Cardio</h3>
+                                <ul>
+                                    <li><a href="#">Funcional</a></li>
+                                    <li><a href="#">CrossFit</a></li>
+                                    <li><a href="#">Running</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-column">
+                                <h3>Bienestar</h3>
+                                <ul>
+                                    <li><a href="#">Yoga</a></li>
+                                    <li><a href="#">Meditación</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="entrenadores.html">Entrenadores</a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-content">
+                            <div class="mega-menu-column">
+                                <h3>Entrenadores</h3>
+                                <ul>
+                                    <li><a href="#">Profe Alvaro</a></li>
+                                    <li><a href="#">Profe Lexi</a></li>
+                                    <li><a href="#">Profe Cofla</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="precios.html">Precios</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+            <button id="theme-toggle" aria-label="Cambiar tema">
+                🌙 <!-- Icono inicial (luna) -->
+            </button>
+        </nav>
+    </header>
+
+    <main class="blog-page">
+        <section class="hero">
+            <video autoplay loop muted playsinline>
+                <source src="assets/video.mp4" type="video/mp4">
+                Tu navegador no soporta videos.
+            </video>
+            <div class="overlay">
+                <h1>Blog Fitness y Salud</h1>
+                <p>Consejos, noticias y guías para un estilo de vida saludable.</p>
+                <a href="#" class="cta-button">Únete Ahora</a>
+            </div>
+        </section>
+
+        <div class="blog-container newspaper-layout">
+            <aside class="blog-sidebar">
+                <div class="categories filter-section">
+                    <h3>Categorías</h3>
+                    <ul>
+                        <li><a href="#" data-category="all">Todas</a></li>
+                        <li><a href="#" data-category="nutricion">Nutrición</a></li>
+                        <li><a href="#" data-category="entrenamiento">Entrenamiento</a></li>
+                        <li><a href="#" data-category="salud-mental">Salud Mental</a></li>
+                        <li><a href="#" data-category="principiantes">Consejos para Principiantes</a></li>
+                    </ul>
+                </div>
+                <div class="tags filter-section">
+                    <h3>Tags</h3>
+                    <ul>
+                        <li><a href="#" data-tag="all">Todos</a></li>
+                        <li><a href="#" data-tag="recetas-saludables">#RecetasSaludables</a></li>
+                        <li><a href="#" data-tag="rutinas-ejercicio">#RutinasDeEjercicio</a></li>
+                        <li><a href="#" data-tag="bienestar">#Bienestar</a></li>
+                        <li><a href="#" data-tag="motivacion">#Motivación</a></li>
+                        <li><a href="#" data-tag="fuerza">#EntrenamientoDeFuerza</a></li>
+                        <li><a href="#" data-tag="desayunos">#DesayunosSaludables</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <section class="blog-articles">
+                <h2>Últimas Entradas</h2>
+                <article class="blog-post" data-category="entrenamiento" data-tags="entrenamiento-de-fuerza,fuerza">
+                    <img src="assets/blog_img1.jpg" alt="Artículo 1">
+                    <h3><a href="#">Los Beneficios del Entrenamiento de Fuerza para la Salud de mayores de edad</a></h3>
+                    <p class="post-meta">Publicado el 2 de junio de 2025 por Antonio Banderas</p>
+                    <p>El entrenamiento de fuerza consiste en ejercitarse contra una resistencia para aumentar tanto la fortaleza como la capacidad de aguante de los músculos. Se puede practicar usando el propio peso, pesas o máquinas especializadas. Para los adultos mayores, este entrenamiento...</p>
+                    <a href="#" class="read-more">Leer más</a>
+                    <div class="comments-section">
+                        <h3>Comentarios (2)</h3>
+                        <ul class="comment-list">
+                            <li class="comment">
+                                <div class="avatar" data-author="Juanceto001"></div>
+                                <div class="comment-content">
+                                    <strong class="comment-author">Juanceto001</strong>
+                                    <p>Buena publicacion, muy interesante. </p>
+                                    <span class="comment-date">Hace 2 días</span>
+                                </div>
+                            </li>
+                            <li class="comment">
+                                <div class="avatar" data-author="Marianito69"></div>
+                                <div class="comment-content">
+                                    <strong class="comment-author">Marianito69</strong>
+                                    <p>Gracias por la información.</p>
+                                    <span class="comment-date">Ayer</span>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="add-comment">
+                            <h3>Deja un comentario</h3>
+                            <form>
+                                <input type="text" placeholder="Nombre">
+                                <textarea placeholder="Comentario"></textarea>
+                                <button type="submit">Publicar Comentario</button>
+                            </form>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-post" data-category="nutricion" data-tags="recetas-saludables,desayunos">
+                    <img src="assets/blog_img2.jpg" alt="Artículo 2">
+                    <h3><a href="#">5 Ideas de Desayunos Saludables y Energéticos</a></h3>
+                    <p class="post-meta">Publicado el 30 de enero de 2025 por Flor Peña</p>
+                    <p>Un desayuno saludable óptimo se compone de alimentos muy nutritivos que cubran tus necesidades de proteínas, carbohidratos y grasas, y que además te aporten las vitaminas y minerales esenciales para el día. Por eso, hoy compartimos contigo 40 recetas de desayunos sanos, fáciles y deliciosos. ¡Sigue leyendo para conocerlas!</p>
+                    <a href="#" class="read-more">Leer más</a>
+                    <div class="comments-section">
+                        <h3>Comentarios (1)</h3>
+                        <ul class="comment-list">
+                            <li class="comment">
+                                <div class="avatar" data-author="FanFitness"></div>
+                                <div class="comment-content">
+                                    <strong class="comment-author">FanFitness</strong>
+                                    <p>Me encantan estas ideas para el desayuno!</p>
+                                    <span class="comment-date">Hoy</span>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="add-comment">
+                            <h3>Deja un comentario</h3>
+                            <form>
+                                <input type="text" placeholder="Nombre">
+                                <textarea placeholder="Comentario"></textarea>
+                                <button type="submit">Publicar Comentario</button>
+                            </form>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-post" data-category="entrenamiento,salud-mental" data-tags="motivacion">
+                    <img src="assets/blog_img3.jpg" alt="Artículo 3">
+                    <h3><a href="#">Cómo Mantener la Motivación para Alcanzar tus Objetivos Fitness</a></h3>
+                    <p class="post-meta">Publicado el 28 de marzo de 2025 por Alejandro Gudiño</p>
+                    <p>En la búsqueda de un estilo de vida saludable, encontrar la motivación para ir al gimnasio puede ser un desafío constante. ¡Pero no te preocupes! Aquí te comparto 10 consejos que te ayudarán a encender esa chispa interior y mantenerte enfocado en tus objetivos de fitness. Desde la creación de metas realistas hasta la importancia de la variedad en tu rutina de ejercicios, este texto te guiará en el camino....</p>
+                    <a href="#" class="read-more">Leer más</a>
+                    <div class="comments-section">
+                        <h3>Comentarios (0)</h3>
+                        <p>Aún no hay comentarios. ¡Sé el primero en comentar!</p>
+                        <div class="add-comment">
+                            <h3>Deja un comentario</h3>
+                            <form>
+                                <input type="text" placeholder="Nombre">
+                                <textarea placeholder="Comentario"></textarea>
+                                <button type="submit">Publicar Comentario</button>
+                            </form>
+                        </div>
+                    </div>
+                </article>
+
+                <div class="pagination">
+                    <a href="#">Anterior</a>
+                    <span class="current">1</span>
+                    <a href="#">2</a>
+                    <a href="#">Siguiente</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="newsletter">
+            <h3>Suscríbete a nuestro SitioWeb</h3>
+            <form>
+                <input type="email" placeholder="Ingresa tu email">
+                <button type="submit">Suscribirse</button>
+            </form>
+        </div>
+        <div class="redes-sociales">
+            <h3>Síguenos</h3>
+            <a href="#"><img src="assets/facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="assets/twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="assets/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="assets/whatsapp.png" alt="Whatsapp"></a>
+        </div>
+        <div>
+            <iframe
+                src="https://www.openstreetmap.org/export/embed.html?bbox=-65.3475%2C-24.2149%2C-65.2669%2C-24.1620&layer=mapnik"
+                width="500"
+                height="300"
+                style="border: 0"
+            ></iframe>
+        </div>
+        <p>Alte Brown 146, Y4600 San Salvador de Jujuy, Jujuy</p>
+        <p>&copy; 2025 Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterSections = document.querySelectorAll('.filter-section');
+            const blogPosts = document.querySelectorAll('.blog-post');
+
+            filterSections.forEach(section => {
+                section.addEventListener('click', (event) => {
+                    if (event.target.tagName === 'A') {
+                        event.preventDefault();
+                        const filterValue = event.target.dataset[Object.keys(event.target.dataset)[0]];
+
+                        blogPosts.forEach(post => {
+                            const category = post.dataset.category;
+                            const tags = post.dataset.tags ? post.dataset.tags.split(',') : [];
+
+                            const matchesCategory = filterValue === 'all' || category === filterValue;
+                            const matchesTag = filterValue === 'all' || tags.includes(filterValue);
+
+                            if (section.classList.contains('categories')) {
+                                post.style.display = matchesCategory ? 'grid' : 'none';
+                            } else if (section.classList.contains('tags')) {
+                                post.style.display = matchesTag ? 'grid' : 'none';
+                            }
+                        });
+                    }
+                });
+            });
+
+            // Inicialmente mostrar todos los posts
+            blogPosts.forEach(post => {
+                post.style.display = 'grid';
+            });
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

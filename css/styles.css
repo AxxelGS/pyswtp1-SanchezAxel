@@ -1,0 +1,874 @@
+/* styles.css */
+
+/* --- Variables de Color --- */
+:root {
+    /* Modo Claro (Default) */
+    --color-background: #ffffff;
+    --color-text: #333333;
+    --color-text-secondary: #555555; /* For slightly dimmer text */
+    --color-text-light: #ffffff; /* Text on dark backgrounds */
+    --color-primary: rgb(151, 6, 6); /* Rojo principal */
+    --color-primary-alt: #ff4500; /* Naranja/Rojo secundario */
+    --color-primary-alt-hover: #d43a00;
+    --color-accent: #007bff; /* Blue accent for links/buttons */
+    --color-accent-hover: #0056b3;
+    --color-success: #28a745;
+    --color-danger: #dc3545;
+
+    --color-header-bg: #333333;
+    --color-header-text: red; /* Color original del logo/texto header */
+    --color-menu-link: white;
+    --color-menu-link-hover-bg: #555555;
+    --color-mega-menu-bg: #333333;
+    --color-mega-menu-link: white;
+    --color-mega-menu-link-hover: var(--color-accent); /* Use accent */
+    --color-border: #dddddd; /* General border color */
+    --color-border-light: #eeeeee; /* Lighter border */
+    --color-card-bg: #f8f9fa; /* Slightly off-white card */
+    --color-card-border: var(--color-primary); /* Border color used less now */
+    --color-card-shadow: rgba(0, 0, 0, 0.1);
+    --color-card-link-bg: var(--color-accent); /* Use accent */
+    --color-card-link-hover-bg: var(--color-accent-hover);
+    --color-footer-bg: #333333;
+    --color-footer-text: white;
+    --color-overlay-bg: rgba(0, 0, 0, 0.5);
+    --color-overlay-text: white;
+    --color-button-primary-bg: var(--color-primary-alt); /* Botón CTA principal */
+    --color-button-primary-hover-bg: var(--color-primary-alt-hover);
+    --color-button-secondary-bg: var(--color-accent); /* Botón Newsletter/secondary */
+    --color-button-secondary-hover-bg: var(--color-accent-hover);
+    --color-contador-text: var(--color-primary-alt);
+    --color-testimonio-subtext: var(--color-text-secondary);
+    --color-input-bg: white;
+    --color-input-border: #ced4da;
+    --color-input-text: var(--color-text);
+    --color-placeholder-text: #6c757d;
+    --color-table-header-bg: #f0f0f0;
+    --color-tag-bg: #eee;
+    --color-tag-text: var(--color-text-secondary);
+    --color-star-unfilled: #ccc;
+    --color-star-filled: gold;
+    --color-star-half: linear-gradient(to right, var(--color-star-filled) 50%, var(--color-star-unfilled) 50%);
+    --color-modal-bg: #fefefe;
+    --color-modal-backdrop: rgba(0,0,0,0.4);
+    --color-close-button: #aaa;
+    --color-close-button-hover: #333;
+    --color-spinner-light: rgba(255, 255, 255, 0.3);
+    --color-spinner-dark: rgba(0, 0, 0, 0.3); /* Added for dark mode */
+
+    /* Transición suave entre modos */
+    --color-transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark-mode {
+    /* Modo Oscuro */
+    --color-background: #121212; /* Very dark grey */
+    --color-text: #e0e0e0; /* Light grey text */
+    --color-text-secondary: #aaaaaa;
+    --color-text-light: #ffffff;
+    --color-primary: rgb(200, 50, 50); /* Rojo más brillante */
+    --color-primary-alt: #ff6347; /* Tomate/Naranja más brillante */
+    --color-primary-alt-hover: #e55337;
+    --color-accent: #4dabf7; /* Azul más brillante */
+    --color-accent-hover: #1a7fdb;
+    --color-success: #34c759; /* Brighter green */
+    --color-danger: #ff453a;  /* Brighter red */
+
+    --color-header-bg: #1c1c1e; /* Slightly lighter dark */
+    --color-header-text: #ff4d4d; /* Rojo más brillante para logo */
+    --color-menu-link: #e0e0e0;
+    --color-menu-link-hover-bg: #3a3a3c;
+    --color-mega-menu-bg: #2c2c2e;
+    --color-mega-menu-link: #e0e0e0;
+    --color-mega-menu-link-hover: var(--color-accent);
+    --color-border: #444444; /* Darker border */
+    --color-border-light: #333333;
+    --color-card-bg: #1c1c1e; /* Same as header */
+    --color-card-border: var(--color-primary);
+    --color-card-shadow: rgba(255, 255, 255, 0.05); /* Subtle light shadow */
+    --color-card-link-bg: var(--color-accent);
+    --color-card-link-hover-bg: var(--color-accent-hover);
+    --color-footer-bg: #1c1c1e;
+    --color-footer-text: #e0e0e0;
+    --color-overlay-bg: rgba(0, 0, 0, 0.7);
+    --color-overlay-text: #f0f0f0;
+    --color-button-primary-bg: var(--color-primary-alt);
+    --color-button-primary-hover-bg: var(--color-primary-alt-hover);
+    --color-button-secondary-bg: var(--color-accent);
+    --color-button-secondary-hover-bg: var(--color-accent-hover);
+    --color-contador-text: var(--color-primary-alt);
+    --color-testimonio-subtext: var(--color-text-secondary);
+    --color-input-bg: #2c2c2e; /* Dark input */
+    --color-input-border: #555555;
+    --color-input-text: var(--color-text);
+    --color-placeholder-text: #8e8e93;
+    --color-table-header-bg: #2c2c2e; /* Dark table header */
+    --color-tag-bg: #3a3a3c;
+    --color-tag-text: var(--color-text-secondary);
+    --color-star-unfilled: #555; /* Darker unfilled star */
+    --color-star-filled: gold;
+    --color-star-half: linear-gradient(to right, var(--color-star-filled) 50%, var(--color-star-unfilled) 50%);
+    --color-modal-bg: #2c2c2e; /* Dark modal */
+    --color-modal-backdrop: rgba(0,0,0,0.6);
+    --color-close-button: #aaaaaa;
+    --color-close-button-hover: #ffffff;
+    --color-spinner-light: rgba(255, 255, 255, 0.3);
+    --color-spinner-dark: rgba(255, 255, 255, 0.3); /* Keep light spinner on dark bg */
+}
+
+/* --- Estilos Generales (con variables) --- */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; /* System font stack */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    transition: var(--color-transition);
+    line-height: 1.6; /* Improved readability */
+    font-size: 16px; /* Base font size */
+}
+
+/* Apply transition to elements */
+header, footer, main, section, div, p, h1, h2, h3, h4, h5, h6, a, button, input, textarea, select, table, th, td, ul, li, .card, .class-card, .trainer-card, .pricing-card, .mega-menu, .overlay, .blog-sidebar, .blog-articles, .blog-post, .comments-section, .contact-form-section, .modal-content {
+    transition: var(--color-transition);
+    box-sizing: border-box; /* Ensure padding/border included in width/height */
+}
+
+/* --- Links --- */
+a {
+   color: var(--color-accent);
+   text-decoration: none;
+}
+a:hover {
+    color: var(--color-accent-hover);
+    text-decoration: underline;
+}
+
+
+/* --- Header --- */
+header {
+    background-color: var(--color-header-bg);
+    color: var(--color-header-text);
+    padding: 10px 0; /* Reduced padding */
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow */
+    position: sticky; /* Make header sticky */
+    top: 0;
+    z-index: 1050; /* Ensure it's above other content */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative; /* Needed for absolute positioned mobile menu */
+}
+
+.logo {
+    font-size: 1.6em; /* Slightly larger */
+    font-weight: bold;
+    color: var(--color-header-text);
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    padding-left: 0;
+    margin: 0;
+}
+
+.menu li {
+    margin-right: 15px; /* Slightly less margin */
+}
+.menu li:last-child {
+    margin-right: 0;
+}
+
+.menu li a {
+    color: var(--color-menu-link);
+    text-decoration: none;
+    padding: 8px 14px; /* Adjusted padding */
+    font-weight: bold;
+    display: block;
+    border-radius: 4px; /* Slightly more rounded */
+    transition: background-color 0.2s ease, color 0.2s ease; /* Faster transition */
+}
+
+.menu li a:hover,
+.menu li a.active { /* Add active state style */
+    background-color: var(--color-menu-link-hover-bg);
+    color: var(--color-menu-link);
+    text-decoration: none; /* Remove underline on hover */
+}
+
+/* --- Theme Toggle Button --- */
+#theme-toggle {
+    background: none;
+    border: none;
+    color: var(--color-menu-link);
+    font-size: 1.6em;
+    cursor: pointer;
+    padding: 0 5px; /* Reduced padding */
+    margin-left: 15px;
+    line-height: 1;
+    opacity: 0.9;
+    transition: opacity 0.2s ease, transform 0.3s ease; /* Add transform transition */
+}
+
+#theme-toggle:hover {
+    opacity: 1;
+    transform: rotate(15deg); /* Slight rotation on hover */
+}
+
+/* --- Mega-Menú --- */
+.menu > li {
+    position: relative;
+}
+
+.mega-menu {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: var(--color-mega-menu-bg);
+    padding: 25px; /* More padding */
+    display: none; /* Hidden by default */
+    opacity: 0; /* Start transparent */
+    visibility: hidden; /* Start hidden */
+    transform: translateY(10px); /* Start slightly lower */
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; /* Add transitions */
+    z-index: 1000;
+    min-width: 450px; /* Wider */
+    border-radius: 0 0 8px 8px; /* More rounded */
+    box-shadow: 0 8px 16px var(--color-card-shadow); /* Enhanced shadow */
+    border: 1px solid var(--color-border);
+    border-top: none;
+}
+
+.mega-menu-content {
+    display: flex;
+    gap: 30px; /* More gap */
+}
+
+.mega-menu-column {
+    flex: 1;
+}
+
+.mega-menu-column h3 {
+    font-size: 1.1em; /* Slightly smaller */
+    margin-top: 0;
+    margin-bottom: 15px; /* More space */
+    border-bottom: 1px solid var(--color-border); /* Use variable */
+    padding-bottom: 8px;
+    color: var(--color-text-secondary); /* Dimmer heading color */
+    text-transform: uppercase; /* Uppercase for style */
+    letter-spacing: 0.5px;
+}
+
+.mega-menu-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mega-menu-column li {
+    padding: 0;
+    margin-bottom: 8px;
+}
+
+.mega-menu-column li a {
+    color: var(--color-mega-menu-link);
+    text-decoration: none;
+    display: block;
+    padding: 6px 0; /* Adjusted padding */
+    font-weight: normal;
+    border-radius: 0;
+    transition: color 0.2s ease;
+}
+
+.mega-menu-column li a:hover {
+    color: var(--color-mega-menu-link-hover);
+    background-color: transparent;
+    text-decoration: none; /* Remove underline */
+}
+
+/* Show mega menu on hover */
+.menu > li:hover > .mega-menu {
+    display: block; /* Use display block with transitions */
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+
+/* --- Hero Section --- */
+.hero {
+    position: relative;
+    height: clamp(400px, 60vh, 550px); /* Responsive height */
+    overflow: hidden;
+    color: var(--color-overlay-text);
+    text-align: center;
+    display: flex; /* Use flex for centering */
+    justify-content: center;
+    align-items: center;
+    background-color: #222; /* Fallback bg if video fails */
+}
+
+.hero video {
+    position: absolute;
+    top: 50%; /* Center video */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%; /* Ensure coverage */
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    z-index: 1; /* Behind overlay */
+}
+
+.overlay {
+    position: relative; /* Position relative to allow z-index */
+    z-index: 2; /* Above video */
+    width: 90%; /* Use percentage */
+    max-width: 800px; /* Limit text width */
+    padding: 30px; /* More padding */
+    background-color: var(--color-overlay-bg);
+    border-radius: 10px; /* Rounded overlay background */
+}
+
+.overlay h1 {
+    font-size: clamp(2em, 5vw, 3.2em); /* Responsive font size */
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: var(--color-overlay-text);
+    font-weight: 700; /* Bolder */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Text shadow */
+}
+.overlay p {
+    color: var(--color-overlay-text);
+    font-size: clamp(1em, 2.5vw, 1.2em);
+    margin-bottom: 25px; /* More space before button */
+    max-width: 600px; /* Limit paragraph width */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button { /* General CTA button style */
+    background-color: var(--color-button-primary-bg);
+    color: var(--color-text-light) !important; /* Ensure text is light */
+    padding: 12px 25px; /* Larger padding */
+    text-decoration: none !important; /* Remove underline */
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Add transform */
+    border: none;
+    font-weight: bold;
+    font-size: 1.1em; /* Slightly larger */
+    display: inline-block; /* Needed for transform */
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: var(--color-button-primary-hover-bg);
+    transform: translateY(-2px); /* Lift effect */
+}
+
+/* --- Clases Destacadas / Cards --- */
+.clases-destacadas, .classes-grid-section, .team-section, .pricing-section /* Common section styling */ {
+    max-width: 1200px;
+    margin: 50px auto; /* Consistent vertical margin */
+    padding: 0 20px;
+    /* text-align: center; Removed - handled by grid */
+}
+
+.clases-destacadas h2, .classes-grid-section h2, .team-section h2, .pricing-section h2, .pricing-toggle h2, .contact-form-section h2, .blog-articles h2 /* Common section titles */ {
+   color: var(--color-text);
+   margin-bottom: 30px; /* Consistent spacing */
+   font-size: 2.2em;
+   font-weight: 600;
+   text-align: center; /* Center titles */
+}
+
+
+.clases-grid, .classes-grid, .team-grid, .pricing-grid /* Common grid layouts */ {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 30px; /* Consistent gap */
+    margin-top: 20px;
+    /* text-align: left; Removed - handled by card */
+}
+
+.card, .class-card, .pricing-card /* Common card styles */ {
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-border); /* Thinner border */
+    border-radius: 8px; /* More rounded */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px var(--color-card-shadow); /* Slightly more shadow */
+    color: var(--color-text);
+    display: flex; /* Use flex for consistent layout */
+    flex-direction: column;
+    text-align: left; /* Align card content left */
+}
+
+.card:hover, .class-card:hover, .pricing-card:hover /* Common card hover */ {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px var(--color-card-shadow); /* Enhanced shadow */
+}
+/* Trainer card hover handled separately in entrenadores.css */
+
+
+/* Specific adjustments might be needed in component CSS */
+.card img, .class-card img, .pricing-card img {
+    width: 100%;
+    height: 200px; /* Fixed height for consistency */
+    object-fit: cover; /* Crop images nicely */
+    display: block;
+    border-bottom: 1px solid var(--color-border); /* Separator */
+}
+
+/* Card Content Area */
+.card-content { /* Add this class to div wrapping card content */
+    padding: 20px;
+    flex-grow: 1; /* Allow content to fill space */
+    display: flex;
+    flex-direction: column;
+}
+
+
+.card h3, .class-card h3, .pricing-card h3 {
+    margin: 0 0 10px 0; /* Adjusted margins */
+    font-size: 1.4em;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.card p, .class-card p, .pricing-card ul { /* Adjusted selector for pricing */
+    margin: 0 0 15px 0;
+    font-size: 1em;
+    line-height: 1.6;
+    color: var(--color-text-secondary); /* Use secondary text color */
+    flex-grow: 1; /* Push button down */
+}
+.pricing-card ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+.pricing-card ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--color-border-light);
+}
+.pricing-card ul li:last-child {
+    border-bottom: none;
+}
+
+
+.card a, .class-card a, .pricing-card .cta-button /* Card button */ {
+    display: inline-block;
+    align-self: flex-start; /* Align button left */
+    background-color: var(--color-card-link-bg);
+    color: var(--color-text-light) !important; /* Ensure light text */
+    padding: 9px 18px; /* Adjusted padding */
+    text-decoration: none !important; /* Remove underline */
+    border-radius: 5px;
+    margin-top: auto; /* Push to bottom */
+    font-size: 0.95em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.card a:hover, .class-card a:hover, .pricing-card .cta-button:hover {
+    background-color: var(--color-card-link-hover-bg);
+    transform: translateY(-1px); /* Slight lift */
+}
+
+/* --- Contador --- */
+.contador {
+    text-align: center;
+    font-size: clamp(1.8em, 4vw, 2.5em); /* Responsive */
+    font-weight: bold;
+    color: var(--color-contador-text);
+    margin-top: 60px;
+    margin-bottom: 10px; /* Reduced bottom margin */
+    padding: 0 20px;
+}
+.contador p {
+    font-size: 0.5em; /* Relative to parent */
+    font-weight: normal;
+    color: var(--color-text-secondary);
+    margin-top: 0;
+    margin-bottom: 40px; /* Space below description */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+/* --- Carrusel --- */
+.carrusel {
+    overflow: hidden;
+    width: 100%;
+    margin-top: 40px; /* More space */
+    background-color: var(--color-card-bg);
+    padding: 30px 0; /* More padding */
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+
+/* --- Carrusel --- */
+/* ... (otras reglas para .carrusel pueden estar aquí) ... */
+
+.carrusel-contenedor {
+    display: flex;
+    width: 500%;
+    transition: transform 1s ease-in-out; 
+}
+
+.testimonio {
+    width: 20%; /* 100% / 5 items */
+    padding: 20px 50px; /* More horizontal padding */
+    box-sizing: border-box;
+    text-align: center;
+    display: flex; /* Center content vertically */
+    flex-direction: column;
+    justify-content: center;
+    min-height: 150px; /* Ensure minimum height */
+}
+
+.testimonio p {
+    font-size: 1.15em; /* Slightly larger */
+    margin-bottom: 15px; /* More space */
+    font-style: italic;
+    color: var(--color-text);
+    max-width: 700px; /* Limit width */
+    margin-left: auto;
+    margin-right: auto;
+}
+.testimonio p::before, .testimonio p::after {
+    content: '"'; /* Add quotes */
+    color: var(--color-text-secondary); /* Dim quotes */
+}
+
+.testimonio h4 {
+    font-size: 1em;
+    color: var(--color-testimonio-subtext);
+    font-weight: bold;
+    font-style: normal;
+    margin-top: auto; /* Push author down */
+}
+
+/* Linear animation */
+@keyframes carrusel {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-400%); } /* (Number of items - 1) * 100% */
+}
+
+
+/* --- Footer --- */
+footer {
+    background-color: var(--color-footer-bg);
+    color: var(--color-footer-text);
+    padding: 40px 20px 20px; /* Adjusted padding */
+    text-align: center;
+    margin-top: 60px;
+}
+
+footer h3 {
+    color: var(--color-footer-text);
+    margin-top: 0;
+    margin-bottom: 20px; /* More space */
+    font-size: 1.3em;
+}
+
+.newsletter {
+    margin-bottom: 35px;
+}
+
+.newsletter form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 500px; /* Limit width */
+    margin: 0 auto; /* Center */
+}
+
+.newsletter input[type="email"] {
+    padding: 12px 15px; /* More padding */
+    border-radius: 5px;
+    border: 1px solid var(--color-input-border);
+    background-color: var(--color-input-bg);
+    color: var(--color-input-text);
+    flex-grow: 1; /* Take available space */
+    min-width: 200px;
+    font-size: 1em;
+}
+
+.newsletter input[type="email"]::placeholder {
+    color: var(--color-placeholder-text);
+    opacity: 1;
+}
+.newsletter input[type="email"]:-ms-input-placeholder {
+   color: var(--color-placeholder-text);
+}
+.newsletter input[type="email"]::-ms-input-placeholder {
+   color: var(--color-placeholder-text);
+}
+
+.newsletter button {
+    background-color: var(--color-button-secondary-bg);
+    color: var(--color-text-light) !important; /* Ensure light text */
+    padding: 12px 22px; /* Match input height */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.newsletter button:hover {
+    background-color: var(--color-button-secondary-hover-bg);
+    transform: translateY(-1px);
+}
+
+.redes-sociales {
+    margin-bottom: 25px;
+}
+
+.redes-sociales a {
+    display: inline-block;
+    margin: 0 12px; /* More spacing */
+}
+
+.redes-sociales img {
+    width: 28px; /* Slightly smaller */
+    height: 28px;
+    vertical-align: middle;
+    opacity: 0.85;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.redes-sociales a:hover img {
+    opacity: 1;
+    transform: scale(1.1); /* Grow effect */
+}
+
+/* Footer Map and Text */
+footer div:has(> iframe) {
+    margin-bottom: 20px;
+}
+footer iframe {
+    max-width: 100%;
+    height: 250px;
+    border-radius: 8px; /* Rounded map */
+    border: 1px solid var(--color-border); /* Add border */
+}
+footer p {
+    margin: 8px 0;
+    font-size: 0.9em;
+    color: var(--color-footer-text);
+    opacity: 0.8;
+}
+footer p:last-child { /* Copyright */
+    margin-top: 20px;
+    font-size: 0.8em;
+    opacity: 0.7;
+}
+
+/* --- Utility Classes --- */
+.text-center { text-align: center; }
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+
+/* --- Burger Menu Button (Requires HTML) --- */
+.burger-menu {
+    display: none; /* Hidden by default */
+    background: none;
+    border: none;
+    color: var(--color-menu-link);
+    font-size: 1.8em; /* Adjust size */
+    cursor: pointer;
+    padding: 5px;
+    margin-left: 10px; /* Space from logo/items */
+}
+/* Style for the burger icon lines (if using spans) */
+.burger-menu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-menu-link);
+    margin: 5px 0;
+    transition: all 0.3s ease-in-out;
+}
+/* Animation for active burger (optional) */
+.burger-menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.burger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+.burger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+     /* Adjust grid for tablets */
+    .clases-grid, .classes-grid, .team-grid, .pricing-grid {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 25px;
+    }
+     .mega-menu {
+        min-width: 400px;
+    }
+    .burger-menu {
+        display: block; /* Show burger on tablet and smaller */
+        order: 3; /* Position after theme toggle */
+    }
+    #theme-toggle {
+        order: 2; /* Theme toggle before burger */
+    }
+    .menu {
+        display: none; /* Hide menu by default on tablet */
+        order: 4; /* Below logo, theme, burger */
+        position: absolute;
+        top: 100%; /* Position below header */
+        left: 0;
+        width: 100%;
+        background-color: var(--color-header-bg);
+        flex-direction: column;
+        padding: 10px 0;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        border-top: 1px solid var(--color-border);
+    }
+    .menu.active {
+        display: flex; /* Show when active */
+    }
+     .menu li {
+        margin-right: 0;
+        width: 100%;
+        text-align: center;
+    }
+    .menu li a {
+        padding: 12px 20px; /* Larger tap area */
+        border-bottom: 1px solid var(--color-border);
+        border-radius: 0;
+    }
+     .menu li:last-child a {
+        border-bottom: none;
+    }
+     .menu li a:hover {
+        background-color: var(--color-menu-link-hover-bg);
+    }
+     /* Hide Mega Menu structure within mobile menu */
+     .menu > li:hover > .mega-menu {
+        display: none; /* Disable hover effect */
+    }
+     .mega-menu {
+        position: static;
+        box-shadow: none;
+        border: none;
+        min-width: auto;
+        padding: 10px 20px 0; /* Adjust padding */
+        background-color: transparent;
+        display: block; /* Always shown within the li */
+        opacity: 1; /* Ensure visible */
+        visibility: visible;
+        transform: none;
+        transition: none; /* No transition needed */
+        border-radius: 0;
+    }
+     .mega-menu-content {
+        flex-direction: column;
+        gap: 0;
+    }
+    .mega-menu-column {
+        margin-bottom: 10px;
+    }
+    .mega-menu-column h3 {
+        font-size: 0.9em; /* Smaller */
+        margin-bottom: 8px;
+        border: none;
+        padding-bottom: 0;
+        color: var(--color-text-secondary);
+        text-transform: none; /* Normal case */
+        letter-spacing: normal;
+        font-weight: bold; /* Make it stand out a bit */
+    }
+    .mega-menu-column ul {
+        padding-left: 15px; /* Indent sub-items */
+    }
+    .mega-menu-column li a {
+         padding: 5px 0;
+         color: var(--color-menu-link);
+         font-weight: normal;
+    }
+     .mega-menu-column li a:hover {
+        color: var(--color-mega-menu-link-hover);
+    }
+}
+
+
+@media (max-width: 768px) {
+    body {
+        font-size: 15px; /* Slightly smaller base font */
+    }
+    .hero {
+        height: clamp(350px, 50vh, 450px); /* Adjust height */
+    }
+    .overlay {
+        padding: 20px;
+    }
+    .overlay h1 {
+        font-size: clamp(1.8em, 4vw, 2.5em);
+    }
+    .overlay p {
+        font-size: clamp(0.9em, 2vw, 1.1em);
+        padding: 0 10px;
+    }
+
+    .clases-grid, .classes-grid, .team-grid, .pricing-grid {
+        grid-template-columns: 1fr; /* Single column */
+        gap: 20px;
+    }
+
+    .contador {
+        font-size: clamp(1.6em, 3.5vw, 2em);
+    }
+
+    .testimonio {
+        padding: 15px 25px;
+    }
+    .testimonio p {
+        font-size: 1.1em;
+    }
+
+    .newsletter form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .newsletter input[type="email"] {
+        min-width: auto;
+        width: 100%;
+        margin: 0 auto 10px;
+    }
+    .newsletter button {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    footer iframe {
+        height: 200px;
+    }
+}

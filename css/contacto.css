@@ -1,0 +1,288 @@
+/* contacto.css */
+
+/* Hero Section Specific */
+.hero-secondary {
+    background-color: var(--color-card-bg); /* Use variable */
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.hero-secondary h1 {
+    font-size: 2.2em;
+    margin-bottom: 10px;
+    color: var(--color-text); /* Use variable */
+}
+/* If using the main video hero, styles from styles.css apply */
+
+
+/* Contact Form Section */
+.contact-form-section {
+    max-width: 800px; /* Wider form */
+    margin: 50px auto; /* Consistent margin */
+    padding: 30px 40px; /* More padding */
+    background-color: var(--color-card-bg); /* Use variable */
+    border: 1px solid var(--color-border); /* Use variable */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px var(--color-card-shadow); /* Use variable */
+}
+
+.contact-form-section h2 {
+    /* Uses common section title style */
+    font-size: 2em;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 30px; /* Increased space */
+}
+
+/* Form Styling */
+#contactForm { /* Target the form directly */
+     display: grid;
+     gap: 20px; /* Space between form groups */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0; /* Remove margin, use grid gap */
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 8px; /* Space below label */
+    color: var(--color-text-secondary); /* Use variable */
+    font-size: 0.95em;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group select,
+.form-group textarea {
+    padding: 12px 15px; /* Consistent padding */
+    border: 1px solid var(--color-input-border); /* Use variable */
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: var(--color-input-bg); /* Use variable */
+    color: var(--color-input-text); /* Use variable */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Add transitions */
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--color-placeholder-text); /* Use variable */
+    opacity: 1;
+}
+
+/* Input focus style */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-accent); /* Use accent color for focus */
+    box-shadow: 0 0 0 3px rgba(var(--color-accent-rgb, 0, 123, 255), 0.25); /* Focus ring - define --color-accent-rgb if needed */
+}
+/* Add --color-accent-rgb to :root and body.dark-mode in styles.css if using box-shadow focus */
+/* :root { --color-accent-rgb: 0, 123, 255; } */
+/* body.dark-mode { --color-accent-rgb: 77, 171, 247; } */
+
+
+/* Validation Styles */
+.form-group input:valid,
+.form-group select:valid,
+.form-group textarea:valid {
+    /* Optional: style valid fields, e.g., green border */
+    /* border-color: var(--color-success); */
+}
+
+.form-group input:invalid:not(:placeholder-shown):not(:focus),
+.form-group select:invalid:not(:focus), /* Adjusted select invalid check */
+.form-group textarea:invalid:not(:placeholder-shown):not(:focus) {
+    border-color: var(--color-danger); /* Use variable */
+}
+/* Remove default select arrow in some browsers */
+.form-group select {
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="5" viewBox="0 0 10 5"><path fill="%236c757d" d="M0 0l5 5 5-5z"/></svg>'); /* Basic arrow */
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 10px 5px;
+    padding-right: 35px; /* Space for arrow */
+}
+body.dark-mode .form-group select {
+     background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="5" viewBox="0 0 10 5"><path fill="%238e8e93" d="M0 0l5 5 5-5z"/></svg>'); /* Dark mode arrow */
+}
+
+
+.form-group textarea {
+     min-height: 120px; /* Taller textarea */
+     resize: vertical;
+}
+
+.form-group .error-message {
+    color: var(--color-danger); /* Use variable */
+    font-size: 0.85em; /* Smaller error text */
+    margin-top: 5px;
+    display: none; /* Ocultar por defecto */
+}
+
+/* Show error message when invalid and not focused */
+.form-group input:invalid:not(:placeholder-shown):not(:focus) ~ .error-message,
+.form-group select:invalid:not(:focus) ~ .error-message,
+.form-group textarea:invalid:not(:placeholder-shown):not(:focus) ~ .error-message {
+    display: block;
+}
+
+
+/* Submit Button */
+.submit-button {
+    background-color: var(--color-accent); /* Use variable */
+    color: var(--color-text-light) !important; /* Use variable */
+    padding: 12px 25px; /* Adjusted padding */
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 45px; /* Ensure minimum height */
+    width: auto; /* Allow natural width */
+    justify-self: start; /* Align button left */
+}
+
+.submit-button:hover:not(:disabled) {
+    background-color: var(--color-accent-hover); /* Use variable */
+    transform: translateY(-1px);
+}
+.submit-button:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+/* Spinner Styles */
+.spinner-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none; /* Oculto por defecto */
+    align-items: center;
+    justify-content: center;
+}
+.submit-button.loading .spinner-container { /* Show spinner when button has .loading class */
+    display: flex;
+}
+.submit-button.loading span:not(.spinner-container) { /* Hide text when loading */
+     visibility: hidden;
+}
+
+.spinner {
+    border: 3px solid var(--color-spinner-light); /* Use variable */
+    border-top-color: var(--color-text-light); /* Use variable */
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+}
+/* Spinner on dark background buttons will use the same light colors */
+
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* --- Modal de confirmación --- */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1100; /* Ensure modal is on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: var(--color-modal-backdrop); /* Use variable */
+    padding-top: 10vh; /* Position modal lower */
+}
+
+.modal-content {
+    background-color: var(--color-modal-bg); /* Use variable */
+    margin: auto; /* Centered horizontally */
+    padding: 25px 30px; /* Adjust padding */
+    border: 1px solid var(--color-border); /* Use variable */
+    width: 90%;
+    max-width: 500px; /* Limit modal width */
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    text-align: center; /* Center modal content */
+}
+body.dark-mode .modal-content {
+     box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+.close-button {
+    color: var(--color-close-button); /* Use variable */
+    position: absolute; /* Position top right */
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 1;
+    transition: color 0.2s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: var(--color-close-button-hover); /* Use variable */
+    text-decoration: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.modal-content p {
+    font-size: 1.2em;
+    margin-top: 10px; /* Adjust margin */
+    margin-bottom: 20px; /* Space below text */
+    color: var(--color-text); /* Use variable */
+}
+/* Optional: Add an icon */
+.modal-content::before {
+    content: '✓'; /* Checkmark icon */
+    display: block;
+    font-size: 3em;
+    color: var(--color-success);
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+
+/* Responsive Form */
+@media (max-width: 768px) {
+    .contact-form-section {
+        padding: 20px;
+    }
+    #contactForm {
+         gap: 15px; /* Reduce gap */
+    }
+    .submit-button {
+        font-size: 1em;
+        width: 100%; /* Full width button on mobile */
+        justify-self: stretch; /* Stretch button */
+    }
+}
+
+@media (max-width: 600px) {
+    .modal-content {
+        width: 95%;
+        padding: 20px 15px;
+    }
+     .modal-content p {
+        font-size: 1.1em;
+    }
+}

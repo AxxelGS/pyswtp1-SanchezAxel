@@ -1,0 +1,265 @@
+/* entrenadores.css */
+
+/* Estilos base (puedes mantener los que ya tenías si no interfieren) */
+.hero-secondary {
+    background-color: #ddd; /* Color de fondo claro */
+    padding: 60px 20px; /* Menos padding vertical */
+    text-align: center;
+}
+
+.hero-secondary h1 {
+    font-size: 2.2em; /* Tamaño ajustado */
+    margin-bottom: 10px;
+}
+
+.team-section {
+    max-width: 1200px;
+    margin: 40px auto; /* Más margen */
+    padding: 20px;
+}
+
+.team-section h2 {
+    font-size: 2.2em;
+    text-align: center;
+    margin-bottom: 30px; /* Más espacio */
+    color: var(--color-primary, rgb(151, 6, 6)); /* Color primario */
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Ajuste minmax */
+    gap: 30px; /* Más espacio */
+}
+
+/* --- Estilos Flip Card --- */
+
+.trainer-card {
+    background-color: transparent; /* El contenedor principal es transparente */
+    width: 100%;
+    /* Establecemos una relación de aspecto para controlar la altura */
+    aspect-ratio: 3 / 4; /* Puedes ajustar esto (e.g., 1/1 para cuadrado) */
+    min-height: 380px; /* Altura mínima */
+    max-height: 450px; /* Altura máxima */
+    perspective: 1000px; /* Necesario para el efecto 3D */
+    border: none;
+    padding: 0; /* Sin padding en el contenedor principal */
+}
+
+.trainer-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.7s; /* Transición suave */
+    transform-style: preserve-3d;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Sombra sutil */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+.trainer-card:hover .trainer-card-inner {
+    transform: rotateY(180deg); /* Gira al hacer hover */
+}
+
+.trainer-card-front,
+.trainer-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Oculta la cara trasera durante el giro */
+    -webkit-backface-visibility: hidden; /* Para Safari */
+    border-radius: 10px; /* Hereda redondeo */
+    overflow: hidden; /* Evita que el contenido se salga */
+    display: flex; /* Usamos flex para centrar contenido */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Contenedor de contenido dentro de cada cara para padding */
+.trainer-card-content {
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* Distribuye el espacio */
+    align-items: center;
+    box-sizing: border-box;
+}
+
+
+/* Cara Frontal */
+.trainer-card-front {
+    background-color: var(--color-card-bg, #f0f0f0); /* Fondo claro */
+    color: var(--color-text, #333);
+    border: 1px solid var(--color-card-border, rgb(151, 6, 6));
+}
+
+.trainer-card-front img {
+    width: 120px; /* Tamaño fijo para la imagen */
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover; /* Asegura que la imagen cubra bien */
+    margin-bottom: 15px;
+    border: 3px solid var(--color-primary, rgb(151, 6, 6)); /* Borde color primario */
+}
+
+.trainer-card-front h3 {
+    font-size: 1.4em;
+    margin: 0 0 5px 0; /* Espaciado ajustado */
+    color: var(--color-primary, rgb(151, 6, 6));
+}
+
+.trainer-card-front p {
+    font-size: 1em;
+    margin: 0 0 10px 0;
+}
+
+.trainer-card-front .rating {
+    margin-top: 5px;
+}
+
+.flip-instruction {
+    font-size: 0.85em;
+    color: #555;
+    margin-top: auto; /* Empuja hacia abajo */
+    padding-top: 10px;
+    font-style: italic;
+}
+
+
+/* Cara Trasera */
+.trainer-card-back {
+    background-color: var(--color-primary, rgb(151, 6, 6)); /* Fondo color primario */
+    color: white;
+    transform: rotateY(180deg); /* Inicialmente rotada */
+    border: 1px solid var(--color-primary-alt, #d43a00);
+}
+
+.trainer-card-back h3 {
+    font-size: 1.4em;
+    margin: 0 0 10px 0;
+}
+
+.trainer-card-back p {
+    font-size: 0.9em;
+    line-height: 1.4;
+    margin: 0 0 8px 0;
+}
+
+.skills-container {
+    width: 90%; /* Ancho del contenedor de skills */
+    margin: 15px 0; /* Espacio vertical */
+}
+
+/* Estilos Barra de Habilidades (ya existentes, ajustados para la cara trasera) */
+.skill-bar {
+    margin-bottom: 10px; /* Espacio entre barras */
+    text-align: left;
+}
+
+.skill-bar-title {
+    font-weight: bold;
+    font-size: 0.85em;
+    margin-bottom: 3px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.skill-bar-outer {
+    background-color: rgba(255, 255, 255, 0.3); /* Fondo claro semi-transparente */
+    width: 100%;
+    height: 12px; /* Más delgada */
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+}
+
+.skill-bar-inner {
+    background-color: white; /* Barra blanca */
+    height: 100%;
+    border-radius: 6px;
+    width: var(--skill-percentage); /* Usa la variable definida en el HTML */
+    position: absolute;
+    left: 0;
+    top: 0;
+    /* No se necesita animación aquí si se define en style */
+}
+
+
+/* Botón Ver Perfil */
+.profile-button {
+    background-color: white;
+    color: var(--color-primary, rgb(151, 6, 6));
+    padding: 8px 18px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+    margin-top: auto; /* Empuja hacia abajo */
+    cursor: pointer;
+}
+
+.profile-button:hover {
+    background-color: rgba(255, 255, 255, 0.85);
+    color: var(--color-primary-alt-hover, #a71d2a);
+}
+
+
+/* Estilos Rating Estrellas (ya existentes, sin cambios necesarios aquí) */
+.rating {
+    display: flex;
+    justify-content: center; /* Centrar estrellas */
+    align-items: center;
+    margin-top: 10px;
+}
+
+.star {
+    width: 20px; /* Tamaño ajustado */
+    height: 20px;
+    background-color: #ccc;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    margin-right: 3px; /* Menos espacio */
+    display: inline-block;
+    transition: transform 0.2s ease-in-out;
+}
+
+.star:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.star.filled {
+    background-color: gold;
+}
+
+.star.half {
+    background: linear-gradient(to right, gold 50%, #ccc 50%);
+}
+
+.rating-value {
+    margin-left: 8px; /* Más espacio */
+    font-weight: bold;
+    font-size: 0.9em;
+    color: inherit; /* Hereda color de la cara */
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: 1fr; /* Una columna en móvil */
+        gap: 25px;
+    }
+     .trainer-card {
+        /* Puedes ajustar aspect-ratio o alturas para móvil si es necesario */
+         aspect-ratio: 3 / 4.5; /* Un poco más alto en móvil? */
+         min-height: 350px;
+    }
+    .trainer-card-front img {
+        width: 100px;
+        height: 100px;
+    }
+     .trainer-card-content {
+        padding: 15px;
+    }
+}

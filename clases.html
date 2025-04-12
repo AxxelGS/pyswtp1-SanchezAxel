@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeruFit - Clases</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/clases.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">PeruFit</div>
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li>
+                    <a href="clases.html">Clases</a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-content">
+                            <div class="mega-menu-column">
+                                <h3>Musculación</h3>
+                                <ul>
+                                    <li><a href="#">Pesas</a></li>
+                                    <li><a href="#">Powerlifting</a></li>
+                                    <li><a href="#">Hipertrofia</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-column">
+                                <h3>Cardio</h3>
+                                <ul>
+                                    <li><a href="#">Funcional</a></li>
+                                    <li><a href="#">CrossFit</a></li>
+                                    <li><a href="#">Running</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-column">
+                                <h3>Bienestar</h3>
+                                <ul>
+                                    <li><a href="#">Yoga</a></li>
+                                    <li><a href="#">Meditación</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="entrenadores.html">Entrenadores</a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-content">
+                            <div class="mega-menu-column">
+                                <h3>Entrenadores</h3>
+                                <ul>
+                                    <li><a href="#">Profe Alvaro</a></li>
+                                    <li><a href="#">Profe Lexi</a></li>
+                                    <li><a href="#">Profe Cofla</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="precios.html">Precios</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+            <button id="theme-toggle" aria-label="Cambiar tema">
+                🌙 <!-- Icono inicial (luna) -->
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <video autoplay loop muted playsinline>
+                <source src="assets/video.mp4" type="video/mp4">
+                Tu navegador no soporta videos.
+            </video>
+            <div class="overlay">
+                <h1>Nuestras Clases</h1>
+                <p>Descubre la variedad de clases que ofrecemos para todos los niveles.</p>
+                <a href="#" class="cta-button">Únete Ahora</a>
+            </div>
+        </section>
+
+        <section class="classes-filter">
+            <h2>Clases Disponibles</h2>
+            <!-- Envuelve los radios en un div para facilitar la selección -->
+            <div id="filter-options">
+                <label>
+                    <input type="radio" name="filter" value="all" checked> Todas
+                </label>
+                <label>
+                    <input type="radio" name="filter" value="musculacion"> Musculación
+                </label>
+                <label>
+                    <input type="radio" name="filter" value="crossfit"> CrossFit
+                </label>
+                <label>
+                    <input type="radio" name="filter" value="yoga"> Yoga
+                </label>
+            </div>
+        </section>
+
+        <section class="classes-grid-section">
+            <h2>Clases</h2>
+            <div class="classes-grid">
+                <div class="class-card musculacion">
+                    <img src="assets/clase_musculacion.jpg" alt="Musculación">
+                    <h3>Musculación Avanzada</h3>
+                    <h3>Powerlifting</h3>
+                    <h3>Hipertrofia</h3>
+                    <p>Enfocado en el desarrollo de fuerza e hipertrofia.</p>
+                    <a href="#">Ver Detalles</a>
+                </div>
+                <div class="class-card crossfit">
+                    <img src="assets/clase_crossfit.jpg" alt="CrossFit">
+                    <h3>CrossFit Nivel 1 al 5</h3>
+                    <h3>Funcional</h3>
+                    <h3>Running</h3>
+                    <p>Introducción a los movimientos y técnicas de CrossFit.</p>
+                    <a href="#">Ver Detalles</a>
+                </div>
+                <div class="class-card yoga">
+                    <img src="assets/clase_yoga.jpg" alt="Yoga">
+                    <h3>Yoga</h3>
+                    <h3>Meditación</h3>
+                    <h3>Pilates</h3>
+                    <p>Clase tradicional para mejorar la flexibilidad y la relajación.</p>
+                    <a href="#">Ver Detalles</a>
+                </div>
+                </div>
+        </section>
+
+        <section class="schedule-section">
+            <h2>Horarios</h2>
+            <div class="schedule-table-container">
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Lunes</th>
+                            <th>Martes</th>
+                            <th>Miércoles</th>
+                            <th>Jueves</th>
+                            <th>Viernes</th>
+                            <th>Sábado</th>
+                            <th>Domingo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Musculación</td>
+                            <td>8:00 - 23:00</td>
+                            <td>8:00 - 23:00</td>
+                            <td>8:00 - 23:00</td>
+                            <td>8:00 - 23:00</td>
+                            <td>8:00 - 23:00</td>
+                            <td>8:00 - 13:00</td>
+                            <td>Cerrado</td>
+                        </tr>
+                        <tr>
+                            <td>CrossFit</td>
+                            <td>9:30 - 21:00</td>
+                            <td>9:30 - 21:00</td>
+                            <td>9:30 - 21:00</td>
+                            <td>9:30 - 21:00</td>
+                            <td>9:30 - 21:00</td>
+                            <td>9:30 - 13:00</td>
+                            <td>Cerrado</td>
+                        </tr>
+                        <tr>
+                            <td>Yoga</td>
+                            <td>Cerrado</td>
+                            <td>17:00 - 18:30</td>
+                            <td>17:00 - 18:30</td>
+                            <td>Cerrado</td>
+                            <td>17:00 - 18:30</td>
+                            <td>11:30 - 13:00</td>
+                            <td>16:00 - 17:30</td>
+                        </tr>
+                        </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="newsletter">
+            <h3>Suscríbete a nuestro SitioWeb</h3>
+            <form>
+                <input type="email" placeholder="Ingresa tu email">
+                <button type="submit">Suscribirse</button>
+            </form>
+        </div>
+        <div class="redes-sociales">
+            <h3>Síguenos</h3>
+            <a href="#"><img src="assets/facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="assets/twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="assets/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="assets/whatsapp.png" alt="Whatsapp"></a>
+        </div>
+        <div>
+            <iframe
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-65.3475%2C-24.2149%2C-65.2669%2C-24.1620&layer=mapnik"
+              width="500"
+              height="300"
+              style="border: 0"
+            ></iframe>
+          </div>
+          <p>Alte Brown 146, Y4600 San Salvador de Jujuy, Jujuy</p>
+   <p>&copy; 2025 Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+         document.addEventListener('DOMContentLoaded', () => {
+        // Selecciona el contenedor de los radio buttons y las tarjetas de clase
+        const filterOptions = document.getElementById('filter-options');
+        const classCards = document.querySelectorAll('.class-card');
+
+        // Función para filtrar las clases
+        function filterClasses() {
+            // Obtiene el valor del radio button seleccionado
+            const selectedFilter = document.querySelector('input[name="filter"]:checked').value;
+
+            // Recorre cada tarjeta de clase
+            classCards.forEach(card => {
+                // Comprueba si la tarjeta debe mostrarse
+                // Muestra si el filtro es 'all' O si la tarjeta contiene la clase del filtro seleccionado
+                if (selectedFilter === 'all' || card.classList.contains(selectedFilter)) {
+                    card.style.display = 'block'; // O 'grid', 'flex', etc., según tu CSS
+                } else {
+                    card.style.display = 'none'; // Oculta la tarjeta si no coincide
+                }
+            });
+        }
+
+        // Añade un event listener al contenedor de los filtros
+        // Escucha el evento 'change' que se dispara cuando se selecciona un radio button
+        filterOptions.addEventListener('change', filterClasses);
+
+        // Llama a la función una vez al cargar la página para establecer el estado inicial
+        filterClasses();
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

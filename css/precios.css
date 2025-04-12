@@ -1,0 +1,213 @@
+/* precios.css */
+
+/* Hero Section Specific */
+.hero-secondary {
+    background-color: var(--color-card-bg); /* Use variable */
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.hero-secondary h1 {
+    font-size: 2.2em;
+    margin-bottom: 10px;
+    color: var(--color-text); /* Use variable */
+}
+/* If using the main video hero, styles from styles.css apply */
+
+
+/* Pricing Toggle Section */
+.pricing-toggle {
+    text-align: center;
+    margin: 40px 0 30px; /* Added top margin */
+}
+
+.pricing-toggle h2 {
+    /* Uses common section title style */
+    font-size: 1.8em; /* Slightly smaller */
+    margin-bottom: 20px;
+}
+
+/* Toggle Switch Styles */
+.toggle-container {
+    display: inline-block;
+    background-color: var(--color-input-bg); /* Use variable */
+    padding: 5px;
+    border-radius: 30px; /* More rounded */
+    position: relative;
+    border: 1px solid var(--color-border); /* Add border */
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+body.dark-mode .toggle-container {
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.toggle-container label {
+    display: inline-block;
+    padding: 10px 25px; /* More padding */
+    font-size: 1em; /* Adjust size */
+    color: var(--color-text-secondary); /* Use variable */
+    cursor: pointer;
+    transition: color 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.toggle-container input[type="radio"] {
+    display: none;
+}
+
+.toggle-slider {
+    position: absolute;
+    top: 5px; /* Match container padding */
+    bottom: 5px;
+    left: 5px;
+    background-color: var(--color-accent); /* Use variable */
+    width: calc(50% - 5px); /* Adjust width based on padding */
+    height: calc(100% - 10px); /* Adjust height */
+    border-radius: 25px; /* Match container rounding */
+    transition: left 0.3s ease;
+    z-index: 1;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+#monthly:checked ~ .toggle-slider {
+    left: 5px;
+}
+
+#yearly:checked ~ .toggle-slider {
+    left: calc(50% + 0px); /* Adjust slider position */
+}
+
+#monthly:checked ~ label[for="monthly"],
+#yearly:checked ~ label[for="yearly"] {
+    color: var(--color-text-light); /* Use variable */
+}
+
+
+/* Pricing Section - uses common styles from styles.css */
+/* .pricing-section { ... } */
+/* .pricing-section h2 { ... } */
+
+/* Grid itself */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* Card specific styles (inherits from .card in styles.css) */
+.pricing-card {
+    /* Inherits background, border-radius, shadow, etc. */
+    border: 1px solid var(--color-border); /* Standard border */
+    padding: 0; /* Remove padding, use card-content */
+    text-align: center;
+    display: flex; /* Ensure flex */
+    flex-direction: column;
+}
+
+.pricing-card img {
+    width: 100%;
+    height: 180px; /* Slightly smaller image */
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid var(--color-border);
+}
+
+/* Add card-content wrapper in HTML if not present */
+.pricing-card .card-content {
+     padding: 25px; /* More padding */
+     flex-grow: 1;
+     display: flex;
+     flex-direction: column;
+     align-items: center; /* Center align content */
+}
+
+.pricing-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.6em; /* Larger title */
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.pricing-card .price {
+    font-size: 2.2em; /* Larger price */
+    font-weight: bold;
+    color: var(--color-primary); /* Use primary color for price */
+    margin-bottom: 20px; /* More space below price */
+}
+
+.pricing-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px 0; /* Consistent margin */
+    color: var(--color-text-secondary);
+    flex-grow: 1;
+    width: 100%; /* Ensure list takes width */
+    text-align: center; /* Center list items */
+}
+
+.pricing-card ul li {
+    padding: 10px 0; /* More padding */
+    border-bottom: 1px solid var(--color-border-light); /* Use variable */
+}
+/* Icon for list items (optional) */
+.pricing-card ul li::before {
+    content: '✓'; /* Checkmark */
+    color: var(--color-success); /* Use success color */
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+.pricing-card ul li:last-child {
+    border-bottom: none;
+}
+
+.pricing-card .cta-button {
+    /* Inherits base styles */
+    background-color: var(--color-accent); /* Use accent color */
+    color: var(--color-text-light) !important;
+    align-self: center; /* Center button */
+    margin-top: auto; /* Push to bottom */
+    padding: 10px 25px; /* Adjust padding */
+    text-decoration: none !important;
+}
+
+.pricing-card .cta-button:hover {
+    background-color: var(--color-accent-hover); /* Use accent hover */
+    transform: translateY(-1px);
+}
+
+/* Featured Card Style */
+.pricing-card.featured {
+    border: 2px solid var(--color-primary); /* Thicker primary border */
+    box-shadow: 0 6px 15px var(--color-card-shadow); /* More prominent shadow */
+    transform: scale(1.02); /* Slightly larger */
+}
+.pricing-card.featured:hover {
+    transform: scale(1.02) translateY(-5px); /* Keep scale on hover */
+}
+
+.pricing-card .discount { /* Optional discount text */
+    font-size: 0.9em;
+    color: var(--color-danger); /* Use variable */
+    font-weight: bold;
+    margin-top: -15px; /* Pull closer to price */
+    margin-bottom: 15px;
+}
+
+/* Responsive for pricing */
+@media (max-width: 768px) {
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+    .pricing-card.featured {
+        transform: none; /* Disable scaling on mobile */
+    }
+    .pricing-card.featured:hover {
+        transform: translateY(-5px); /* Keep hover lift */
+    }
+    .toggle-container label {
+        padding: 8px 15px; /* Adjust padding */
+    }
+}

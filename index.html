@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeruFit - Página Principal</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">PeruFit</div>
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li>
+                    <a href="clases.html">Clases</a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-content">
+                            <div class="mega-menu-column">
+                                <h3>Musculación</h3>
+                                <ul>
+                                    <li><a href="#">Pesas</a></li>
+                                    <li><a href="#">Powerlifting</a></li>
+                                    <li><a href="#">Hipertrofia</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-column">
+                                <h3>Cardio</h3>
+                                <ul>
+                                    <li><a href="#">Funcional</a></li>
+                                    <li><a href="#">CrossFit</a></li>
+                                    <li><a href="#">Running</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-column">
+                                <h3>Bienestar</h3>
+                                <ul>
+                                    <li><a href="#">Yoga</a></li>
+                                    <li><a href="#">Meditación</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="entrenadores.html">Entrenadores</a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-content">
+                            <div class="mega-menu-column">
+                                <h3>Entrenadores</h3>
+                                <ul>
+                                    <li><a href="#">Profe Alvaro</a></li>
+                                    <li><a href="#">Profe Lexi</a></li>
+                                    <li><a href="#">Profe Cofla</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="precios.html">Precios</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                
+            </ul>
+            <!-- Botón para cambiar tema Dark/Light Mode -->
+            <button id="theme-toggle" aria-label="Cambiar tema">
+                🌙 <!-- Icono inicial (luna) -->
+            </button>
+            <!-- Fin del Botón -->
+        </nav>
+    </header>
+
+    <section class="hero">
+        <video autoplay loop muted playsinline>
+            <source src="assets/video.mp4" type="video/mp4">
+            Tu navegador no soporta videos.
+        </video>
+        <div class="overlay">
+            <h1>PeruFit</h1>
+            <p>Tu camino hacia una vida saludable comienza aquí.</p>
+            <a href="#" class="cta-button">Únete Ahora</a>
+        </div>
+    </section>
+
+    <section class="clases-destacadas">
+        <h2>Clases Destacadas</h2>
+        <div class="clases-grid">
+            <div class="card">
+                <img src="assets/clase1.jpg" alt="Musculación">
+                <h3>Musculación</h3>
+                <p>Desarrolla tu fuerza y masa muscular.</p>
+                <a href="#">Ver más</a>
+            </div>
+            <div class="card">
+                <img src="assets/clase2.jpg" alt="CrossFit">
+                <h3>CrossFit/Cardio</h3>
+                <p>Entrenamiento de alta intensidad.</p>
+                <a href="#">Ver más</a>
+            </div>
+            <div class="card">
+                <img src="assets/clase3.jpg" alt="Yoga">
+                <h3>Yoga y Bienestar</h3>
+                <p>Encuentra tu equilibrio y flexibilidad.</p>
+                <a href="#">Ver más</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="contador">
+        <span class="numero" data-target="500">0</span> socios satisfechos
+        <p>"Opiniones de nuestros clientes."</p>
+    </div>
+
+    <div class="carrusel">
+        <div class="carrusel-contenedor">
+            <div class="testimonio">
+                <p>"Muy lindo gimnasio, listo para un sigma."</p>
+                <h4>- Francisco Mamaní</h4>
+            </div>
+            <div class="testimonio">
+                <p>"El gimnasio del papu, muy bonito."</p>
+                <h4>- Cayo Juan</h4>
+            </div>
+            <div class="testimonio">
+                <p>"He logrado grandes avances en este gym."</p>
+                <h4>- Jhon pork</h4>
+            </div>
+            <div class="testimonio">
+                <p>"Las clases de Yoga son mi momento de paz en la semana."</p>
+                <h4>- Sigma Rodriguez.</h4>
+            </div>
+            <div class="testimonio">
+                <p>"Resultados visibles en poco tiempo. ¡Muy contento!"</p>
+                <h4>- Chanchi Vladimir.</h4>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="newsletter">
+            <h3>Suscríbete a nuestro SitioWeb</h3>
+            <form>
+                <input type="email" placeholder="Ingresa tu email">
+                <button type="submit">Suscribirse</button>
+            </form>
+        </div>
+        <div class="redes-sociales">
+            <h3>Síguenos en</h3>
+            <a href="#"><img src="assets/facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="assets/twitter.png" alt="Twitter/X"></a>
+            <a href="#"><img src="assets/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="assets/whatsapp.png" alt="Whatsapp"></a>
+        </div>
+        <div>
+            <iframe
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-65.3475%2C-24.2149%2C-65.2669%2C-24.1620&layer=mapnik"
+              width="500"
+              height="300"
+              style="border: 0"
+            ></iframe>
+          </div>
+          <p>Alte Brown 146, Y4600 San Salvador de Jujuy, Jujuy</p>
+            <p>&copy; 2025 Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

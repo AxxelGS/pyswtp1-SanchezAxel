@@ -1,0 +1,443 @@
+/* blog.css */
+
+/* Remove hardcoded colors, use variables */
+
+.blog-page main { /* Use a class on the body or main element of the blog page */
+    padding: 30px 20px;
+}
+
+.blog-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap; /* Allow sidebar to wrap on smaller screens */
+    gap: 30px;
+}
+
+/* --- Sidebar --- */
+.blog-sidebar {
+    flex: 1 1 300px; /* Flex shorthand: grow, shrink, basis */
+    max-width: 300px; /* Max width */
+    padding: 25px; /* More padding */
+    background-color: var(--color-card-bg); /* Use variable */
+    border: 1px solid var(--color-border); /* Use variable */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px var(--color-card-shadow); /* Use variable */
+    margin-bottom: 30px; /* Add margin for wrapping */
+    align-self: flex-start; /* Align to top when wrapping */
+}
+
+.filter-section { /* Common style for category/tag sections */
+    margin-bottom: 25px;
+}
+.filter-section:last-child {
+    margin-bottom: 0;
+}
+
+.blog-sidebar h3 {
+    font-size: 1.3em; /* Adjust size */
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--color-border); /* Use variable */
+    padding-bottom: 10px;
+    color: var(--color-text); /* Use variable */
+    font-weight: 600;
+}
+
+.blog-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.blog-sidebar .categories li a {
+    display: block;
+    padding: 8px 5px; /* Adjusted padding */
+    text-decoration: none;
+    color: var(--color-text-secondary); /* Use variable */
+    transition: color 0.2s ease, background-color 0.2s ease;
+    border-radius: 4px;
+    margin-left: -5px; /* Align text */
+    margin-right: -5px;
+}
+
+.blog-sidebar .categories li a:hover {
+    color: var(--color-accent); /* Use variable */
+    background-color: rgba(0, 123, 255, 0.05); /* Subtle hover background */
+    text-decoration: none;
+}
+/* Style for active category link (requires JS to add class) */
+.blog-sidebar .categories li a.active {
+     color: var(--color-accent);
+     font-weight: bold;
+}
+
+
+/* Tags specific styling */
+.blog-sidebar .tags ul {
+    display: flex; /* Flex layout for tags */
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.blog-sidebar .tags li {
+    margin-bottom: 0; /* Remove default margin */
+}
+
+.blog-sidebar .tags li a {
+    display: inline-block;
+    background-color: var(--color-tag-bg); /* Use variable */
+    color: var(--color-tag-text); /* Use variable */
+    padding: 6px 12px; /* Adjusted padding */
+    border-radius: 15px; /* Pill shape */
+    font-size: 0.85em;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.blog-sidebar .tags li a:hover {
+    background-color: var(--color-accent); /* Use variable */
+    color: var(--color-text-light); /* Use variable */
+    text-decoration: none;
+}
+/* Style for active tag link (requires JS to add class) */
+.blog-sidebar .tags li a.active {
+     background-color: var(--color-accent);
+     color: var(--color-text-light);
+}
+
+/* --- Blog Articles --- */
+.blog-articles {
+    flex: 2 1 60%; /* Flex shorthand: grow, shrink, basis */
+    min-width: 0; /* Allow shrinking below basis */
+    /* Removed background/border - let posts define their style */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; /* Increased gap */
+}
+
+
+.blog-articles h2 { /* Title like "Últimas Entradas" */
+    font-size: 2em;
+    margin-bottom: 20px; /* Reduced margin as posts have padding */
+    /* border-bottom: 1px solid var(--color-border); Removed - optional */
+    /* padding-bottom: 10px; */
+    grid-column: 1 / -1;
+    color: var(--color-text);
+    margin-top: 0;
+    text-align: left; /* Align title left */
+}
+
+.blog-post {
+    background-color: var(--color-card-bg); /* Use card background */
+    padding: 0; /* Remove padding, handled by content */
+    border-radius: 8px; /* Match other cards */
+    border: 1px solid var(--color-border);
+    box-shadow: 0 1px 3px var(--color-card-shadow);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Needed for image radius */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.blog-post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px var(--color-card-shadow);
+}
+
+
+.blog-post img {
+    width: 100%;
+    height: 200px; /* Fixed height */
+    object-fit: cover;
+    display: block; /* Remove extra space */
+    /* border-radius: 5px 5px 0 0; Top corners rounded */
+    /* margin-bottom: 0; No margin needed */
+}
+
+/* Content wrapper for padding */
+.blog-post-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-post h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.4em; /* Slightly smaller */
+    line-height: 1.3;
+    font-weight: 600;
+}
+
+.blog-post h3 a {
+    color: var(--color-text);
+    text-decoration: none;
+}
+.blog-post h3 a:hover {
+    color: var(--color-accent);
+    text-decoration: underline;
+}
+
+.blog-post .post-meta {
+    color: var(--color-text-secondary);
+    font-size: 0.85em;
+    margin-bottom: 15px;
+}
+
+.blog-post p:not(.post-meta) {
+    line-height: 1.6;
+    color: var(--color-text);
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+
+.blog-post .read-more {
+    display: inline-block;
+    align-self: flex-start;
+    margin-top: auto; /* Push to bottom */
+    padding: 8px 18px;
+    background-color: var(--color-primary);
+    color: var(--color-text-light) !important; /* Ensure light text */
+    text-decoration: none !important;
+    text-align: center;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.blog-post .read-more:hover {
+    background-color: var(--color-primary-alt-hover);
+    transform: translateY(-1px);
+}
+
+/* --- Pagination --- */
+.pagination {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--color-border);
+}
+
+.pagination a,
+.pagination span.current {
+    display: inline-block;
+    padding: 8px 14px;
+    margin: 0 4px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: var(--color-text-secondary);
+    border: 1px solid var(--color-border);
+    background-color: var(--color-card-bg);
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.pagination a:hover {
+    background-color: var(--color-accent);
+    color: var(--color-text-light) !important;
+    border-color: var(--color-accent);
+    text-decoration: none;
+}
+
+.pagination span.current {
+    background-color: var(--color-accent);
+    color: var(--color-text-light) !important;
+    border-color: var(--color-accent);
+    font-weight: bold;
+    cursor: default;
+}
+
+/* --- Comments Section --- */
+.comments-section {
+    margin-top: 30px;
+    padding: 25px 20px; /* Add padding */
+    border-top: 1px solid var(--color-border);
+    background-color: var(--color-background); /* Slightly different bg maybe */
+    border-radius: 5px; /* Slight rounding */
+    /* Removed from blog-post, now wraps comments */
+}
+
+.comments-section h3 {
+    font-size: 1.4em;
+    margin-top: 0;
+    margin-bottom: 25px; /* More space */
+    color: var(--color-text);
+}
+
+.comment-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0; /* Space before add comment */
+}
+
+.comment {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+.comment:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+/* Avatar - Consider using actual images or a placeholder library */
+.avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: var(--color-accent); /* Default avatar color */
+    color: var(--color-text-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1em;
+    font-weight: bold;
+    overflow: hidden;
+    flex-shrink: 0; /* Prevent shrinking */
+    text-transform: uppercase; /* For initials */
+}
+/* Initials - Use JS to set the content attr or data-initial */
+.avatar::before {
+    content: attr(data-initial, '?'); /* Show initial or ? */
+}
+/* Example dynamic avatars (keep or remove) */
+/* You might style these based on user ID/role in the future */
+.avatar[data-author^="Usuario"] { background-color: #007bff; }
+.avatar[data-author^="Otro"] { background-color: #28a745; }
+.avatar[data-author^="Fan"] { background-color: #dc3545; }
+
+
+.comment-content {
+    flex-grow: 1;
+}
+
+.comment-author {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--color-text);
+    font-size: 1.05em;
+}
+
+.comment-content p { /* Comment text */
+    margin: 0 0 8px 0;
+    color: var(--color-text);
+    line-height: 1.5;
+}
+
+.comment-date {
+    display: block;
+    color: var(--color-text-secondary);
+    font-size: 0.8em;
+    margin-top: 5px;
+}
+
+.add-comment {
+    margin-top: 30px;
+}
+
+.add-comment h3 {
+     font-size: 1.3em;
+     margin-bottom: 15px;
+     color: var(--color-text);
+}
+
+.add-comment form {
+    display: grid;
+    gap: 15px; /* More gap */
+}
+
+.add-comment label { /* Optional labels */
+    font-weight: bold;
+    font-size: 0.9em;
+    margin-bottom: -10px; /* Pull up closer to input */
+    color: var(--color-text-secondary);
+}
+
+.add-comment input[type="text"],
+.add-comment textarea {
+    padding: 12px; /* More padding */
+    border: 1px solid var(--color-border); /* Use variable */
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: var(--color-input-bg); /* Use variable */
+    color: var(--color-input-text); /* Use variable */
+    width: 100%; /* Ensure full width */
+}
+.add-comment input[type="text"]::placeholder,
+.add-comment textarea::placeholder {
+     color: var(--color-placeholder-text); /* Use variable */
+     opacity: 1;
+}
+
+
+.add-comment textarea {
+    min-height: 100px; /* Taller */
+    resize: vertical; /* Allow vertical resize */
+}
+
+.add-comment button[type="submit"] {
+    padding: 10px 20px; /* Adjusted padding */
+    background-color: var(--color-primary); /* Use variable */
+    color: var(--color-text-light) !important; /* Use variable */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+    font-size: 1em;
+    justify-self: start; /* Align button left */
+}
+
+.add-comment button[type="submit"]:hover {
+    background-color: var(--color-primary-alt-hover); /* Use variable */
+    transform: translateY(-1px);
+}
+
+
+/* --- Responsive Blog --- */
+@media (max-width: 992px) { /* Tablet */
+     .blog-sidebar {
+        flex-basis: 250px; /* Slightly smaller basis */
+        max-width: none; /* Allow full width if wrapped */
+    }
+}
+
+@media (max-width: 768px) { /* Mobile */
+    .blog-container {
+        flex-direction: column; /* Stack sidebar and articles */
+    }
+    .blog-sidebar {
+        flex-basis: auto; /* Reset basis */
+        margin-bottom: 30px;
+        max-width: none; /* Allow full width */
+    }
+    .blog-articles {
+        min-width: auto; /* Reset min-width */
+    }
+}
+
+@media (max-width: 600px) {
+     .blog-articles {
+        grid-template-columns: 1fr; /* Force single column */
+        gap: 20px; /* Reduce gap */
+    }
+     .comments-section {
+         padding: 20px 15px;
+     }
+     .comment {
+         gap: 10px;
+     }
+     .avatar {
+         width: 40px;
+         height: 40px;
+         font-size: 1em;
+     }
+}

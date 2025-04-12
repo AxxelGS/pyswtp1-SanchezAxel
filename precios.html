@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeruFit - Precios</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/precios.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">PeruFit</div>
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li>
+                    <a href="clases.html">Clases</a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-content">
+                            <div class="mega-menu-column">
+                                <h3>Musculación</h3>
+                                <ul>
+                                    <li><a href="#">Pesas</a></li>
+                                    <li><a href="#">Powerlifting</a></li>
+                                    <li><a href="#">Hipertrofia</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-column">
+                                <h3>Cardio</h3>
+                                <ul>
+                                    <li><a href="#">Funcional</a></li>
+                                    <li><a href="#">CrossFit</a></li>
+                                    <li><a href="#">Running</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-column">
+                                <h3>Bienestar</h3>
+                                <ul>
+                                    <li><a href="#">Yoga</a></li>
+                                    <li><a href="#">Meditación</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="entrenadores.html">Entrenadores</a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-content">
+                            <div class="mega-menu-column">
+                                <h3>Entrenadores</h3>
+                                <ul>
+                                    <li><a href="#">Profe Alvaro</a></li>
+                                    <li><a href="#">Profe Leci</a></li>
+                                    <li><a href="#">Profe Cofla</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="precios.html">Precios</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+            <button id="theme-toggle" aria-label="Cambiar tema">
+                🌙 <!-- Icono inicial (luna) -->
+            </button>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <video autoplay loop muted playsinline>
+                <source src="assets/video.mp4" type="video/mp4">
+                Tu navegador no soporta videos.
+            </video>
+            <div class="overlay">
+                <h1>Nuestros Precios</h1>
+                <p>Elije el plan que mas te convenga.</p>
+                <p>MODO DE PAGO:</p>
+                <p>EFECTIVO-TRANSFERENCIA-TARJETA DE DEBITO-CRIPTOMONEDA</p>
+                <a href="#" class="cta-button">Únete Ahora</a>
+            </div>
+        </section>
+        <section class="pricing-toggle">
+            <h2>Elige tu Plan de Pago</h2>
+            <div class="toggle-container">
+                <input type="radio" name="billing" id="monthly" checked>
+                <label for="monthly">Mensual</label>
+                <input type="radio" name="billing" id="yearly">
+                <label for="yearly">Anual </label>
+                <div class="toggle-slider"></div>
+            </div>
+        </section>
+        <section class="pricing-section">
+            <h2>Nuestros Planes</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <img src="assets/precio1.jpg" alt="Plan Básico">
+                    <h3>Plan Básico</h3>
+                    <p class="price" data-monthly-price="$25.000 / mes" data-yearly-price="$250.000 / año"></p>
+                    <ul>
+                        <li>Acceso a la sala de pesas</li>
+                        <li>Clases grupales básicas</li>
+                        <li>Asistencia de instructores</li>
+                    </ul>
+                    <a href="#" class="cta-button">Seleccionar Plan</a>
+                </div>
+                <div class="pricing-card featured">
+                    <img src="assets/precio1.jpg" alt="Plan Premium">
+                    <h3>Plan Premium</h3>
+                    <p class="price" data-monthly-price="$35.000 / mes" data-yearly-price="$350.000 / año"></p>
+                    <ul>
+                        <li>Acceso completo a todas las áreas</li>
+                        <li>Todas las clases grupales</li>
+                        <li>Entrenamiento personalizado (3 sesión/semana)</li>
+                        <li>Acceso a la piscina</li>
+                    </ul>
+                    <a href="#" class="cta-button">Seleccionar Plan</a>
+                </div>
+                <div class="pricing-card">
+                    <img src="assets/precio1.jpg" alt="Plan Imperio">
+                    <h3>Plan Imperio</h3>
+                    <p class="price" data-monthly-price="$ 150.000/ mes" data-yearly-price="$1.500.000 / año"></p>
+                    <ul>
+                        <li>Acceso completo por un mes</li>
+                        <li>Acceso a todas las clases</li>
+                        <li>Sesiones de entrenamiento personalizado</li>
+                        <li>Acceso a la piscina y sauna</li>
+                        <li>Plan nutricional</li>
+                        <li>Beneficios exclusivos</li>
+                    </ul>
+                    <a href="#" class="cta-button">Seleccionar Plan</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="newsletter">
+            <h3>Suscríbete a nuestro SitioWeb</h3>
+            <form>
+                <input type="email" placeholder="Ingresa tu email">
+                <button type="submit">Suscribirse</button>
+            </form>
+        </div>
+        <div class="redes-sociales">
+            <h3>Síguenos</h3>
+            <a href="#"><img src="assets/facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="assets/twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="assets/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="assets/whatsapp.png" alt="Whatsapp"></a>
+        </div>
+        <div>
+            <iframe
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-65.3475%2C-24.2149%2C-65.2669%2C-24.1620&layer=mapnik"
+              width="500"
+              height="300"
+              style="border: 0"
+            ></iframe>
+          </div>
+          <p>Alte Brown 146, Y4600 San Salvador de Jujuy, Jujuy</p>
+            <p>&copy; 2025 Todos los derechos reservados.</p>
+    </footer>
+    <script>
+        const monthlyRadio = document.getElementById('monthly');
+        const yearlyRadio = document.getElementById('yearly');
+        const priceElements = document.querySelectorAll('.price');
+
+        function updatePrices() {
+            priceElements.forEach(priceElement => {
+                if (monthlyRadio.checked) {
+                    priceElement.textContent = priceElement.dataset.monthlyPrice;
+                } else if (yearlyRadio.checked) {
+                    priceElement.textContent = priceElement.dataset.yearlyPrice;
+                }
+            });
+        }
+
+        monthlyRadio.addEventListener('change', updatePrices);
+        yearlyRadio.addEventListener('change', updatePrices);
+
+        // Initial update
+        updatePrices();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
